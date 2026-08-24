@@ -1,0 +1,40 @@
+{
+    "experiences": [
+        {
+            "title": "Java Programming Certification",
+            "subtitle": "NPTEL",
+            "workType": "Certification",
+            "workDescription": [
+                "Completed certification in **Java Programming**."
+            ],
+            "dateText": "2026"
+        },
+        {
+            "title": "Introduction to SQL",
+            "subtitle": "Simplilearn",
+            "workType": "Certification",
+            "workDescription": [
+                "Completed certification in **SQL** fundamentals."
+            ],
+            "dateText": "2026"
+        },
+        {
+            "title": "Generative AI Proficiency",
+            "subtitle": "FutureSkillsPrime",
+            "workType": "Certification",
+            "workDescription": [
+                "Completed certification in **Generative AI** proficiency."
+            ],
+            "dateText": "2026"
+        },
+        {
+            "title": "Fundamental Python Programming",
+            "subtitle": "Infosys Springboard",
+            "workType": "Certification",
+            "workDescription": [
+                "Completed certification in **Python** fundamentals."
+            ],
+            "dateText": "2023"
+        }
+    ]
+}

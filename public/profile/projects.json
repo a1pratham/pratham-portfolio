@@ -1,0 +1,43 @@
+{
+    "projects" : [
+        {
+            "image" : "images/projects/feedbook-poster.png",
+            "title": "FeedBook - Full-Stack Review Platform",
+            "bodyText": "- Built a full-stack review platform with fuzzy search, category navigation, and an AI chatbot.\n - Designed a **9-table PostgreSQL** schema with triggers and threaded replies using self-referencing foreign keys.\n - Implemented **JWT**, OTP, BCrypt, token rotation, and **Spring Security RBAC**.\n - Developed layered **Spring Boot** REST APIs and a role-gated **React** frontend.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/a1pratham/FeedBook"
+                }
+            ],
+            "tags" : [
+                "Java 21",
+                "Spring Boot 3.5",
+                "PostgreSQL",
+                "React 19",
+                "JWT",
+                "Vite"
+            ]
+        },
+        {
+            "image" : "images/projects/manganest-poster.png",
+            "title": "MangaNest - Android Manga & Manhwa Reader",
+            "bodyText": "- Built an Android manga reader with **AniList GraphQL**, OAuth 2.0, profiles, and reading sync.\n - Developed multi-source content extraction using **Jsoup** with fallback parsing.\n - Built a RecyclerView reader with **Glide** caching, image preloading, and persistent progress.\n - Implemented search, trending discovery, and Material Design UI.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/a1pratham/MangaNest"
+                }
+            ],
+            "tags" : [
+                "Java",
+                "Android SDK",
+                "XML",
+                "GraphQL",
+                "Volley",
+                "Jsoup",
+                "Material Components"
+            ]
+        }
+    ]
+}

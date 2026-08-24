@@ -1,0 +1,22 @@
+{
+    "education":[
+        {
+            "title": "2025 - Expected 2027",
+            "cardTitle": "Master of Computer Applications (MCA)",
+            "cardSubtitle":"Bharati Vidyapeeth's IMIT (Affiliated with Mumbai University), Navi Mumbai",
+            "cardDetailedText": "GPA - 7.79 (Semester I), 7.34 (Semester II)",
+            "icon" : {
+                "src": "images/education/lorem-ipsum.png"
+            }
+        },
+        {
+            "title": "2021 - 2024",
+            "cardTitle": "B.Sc. Information Technology",
+            "cardSubtitle":"Sardar Patel Mahavidyalaya (Affiliated with Gondwana University), Chandrapur",
+            "cardDetailedText": "CGPA - 7.76 / 10",
+            "icon" : {
+                "src": "images/education/lorem-ipsum.png"
+            }
+        }
+    ]
+}
