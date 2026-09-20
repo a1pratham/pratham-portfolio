@@ -1,0 +1,22 @@
+.section {
+  padding: var(--space-section) 0;
+}
+
+.header {
+  margin-bottom: var(--space-12);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-3);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 20ch;
+  font-size: var(--step-4);
+  font-weight: 700;
+}

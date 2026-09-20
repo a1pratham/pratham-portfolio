@@ -1,0 +1,15 @@
+{
+  "short_name": "Pratham Ukey",
+  "name": "Pratham Ukey - Backend & Full-Stack Developer",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#07080c",
+  "background_color": "#07080c"
+}

@@ -1,0 +1,56 @@
+{
+    "intro": "I love to learn new things and experiment with new technologies.\nThese are some of the major languages, technologies, tools and platforms I have worked with:",
+    "skills": [
+        {
+            "title": "Languages & Databases",
+            "items": [
+                {
+                    "icon": "openjdk",
+                    "title": "Core Java"
+                },
+                {
+                    "icon": "mysql",
+                    "title": "MySQL"
+                },
+                {
+                    "icon": "postgresql",
+                    "title": "PostgreSQL"
+                },
+                {
+                    "icon": "python",
+                    "title": "Python Basics"
+                }
+            ]
+        },
+        {
+            "title": "Frameworks & Technologies",
+            "items": [
+                {
+                    "icon": "springboot",
+                    "title": "Spring Boot"
+                },
+                {
+                    "icon": "react",
+                    "title": "React"
+                },
+                {
+                    "icon": "android",
+                    "title": "Android SDK"
+                }
+            ]
+        },
+        {
+            "title": "Tools & Platforms",
+            "items": [
+                {
+                    "icon": "git",
+                    "title": "Git & GitHub"
+                },
+                {
+                    "icon": "androidstudio",
+                    "title": "Android Studio"
+                }
+            ]
+        }
+    ]
+}
