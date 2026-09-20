@@ -33,5 +33,4 @@ const certificateAssets = {
   },
 };
 
-
 export default certificateAssets;
