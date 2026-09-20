@@ -1,0 +1,19 @@
+.copy {
+  display: grid;
+  gap: var(--space-6);
+  max-width: 48ch;
+  color: var(--text-muted);
+  font-size: var(--step-1);
+}
+
+.copy > :first-child {
+  color: var(--text);
+  font-size: var(--step-2);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.copy strong {
+  color: var(--text);
+  font-weight: 600;
+}

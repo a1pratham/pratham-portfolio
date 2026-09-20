@@ -1,0 +1,11 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity var(--dur-slow) var(--ease) var(--reveal-delay),
+    transform var(--dur-slow) var(--ease) var(--reveal-delay);
+}
+
+.reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}

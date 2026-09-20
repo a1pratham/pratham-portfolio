@@ -1,0 +1,16 @@
+{
+    "social": [
+        {
+            "network" : "linkedin",
+            "href": "https://linkedin.com/in/justpratham"
+        },
+        {
+            "network" : "github",
+            "href": "https://github.com/a1pratham"
+        },
+        {
+            "network" : "email",
+             "href": "mailto:prathamukey3@gmail.com?subject=Portfolio%20Contact"
+        }
+    ]
+}

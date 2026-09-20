@@ -1,0 +1,194 @@
+.card {
+  position: relative;
+  display: grid;
+  gap: var(--space-8);
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--surface-strong), var(--surface));
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease);
+}
+
+/* Cursor-following highlight (fine pointers only; --px/--py come from useTilt). */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(28rem circle at var(--px, 50%) var(--py, 0%), rgb(var(--accent-rgb) / 10%), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--border-strong);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+}
+
+.media {
+  perspective: 1000px;
+  min-width: 0;
+}
+
+.frame {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 60%);
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 300ms var(--ease);
+}
+
+.chrome {
+  display: flex;
+  gap: 0.375rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.chrome i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 700ms var(--ease);
+}
+
+@media (hover: hover) {
+  .card:hover .frame img {
+    transform: scale(1.04);
+  }
+}
+
+.body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.kicker {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--step-3);
+  font-weight: 700;
+}
+
+.summary {
+  color: var(--text-muted);
+}
+
+.summary strong,
+.features strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Collapsible feature list: animates height via grid rows, hidden from AT when closed. */
+.details {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows var(--dur) var(--ease), visibility 0s var(--dur);
+}
+
+.open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.features {
+  display: grid;
+  gap: var(--space-3);
+  min-height: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+}
+
+.features li {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.features li::before {
+  content: '';
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 0.75rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.toggle svg {
+  transition: transform var(--dur) var(--ease);
+}
+
+.toggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 900px) {
+  .card {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .flip .media {
+    order: 2;
+  }
+}

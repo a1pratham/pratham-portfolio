@@ -1,0 +1,152 @@
+.region {
+  overflow-x: clip;
+  padding-block: var(--space-6);
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.arc {
+  --card-w: clamp(17rem, 28vw, 23rem);
+
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+  padding-block: var(--space-6);
+}
+
+.deck {
+  --card-w: min(76vw, 20.5rem);
+
+  perspective: 1000px;
+  padding-block: var(--space-4);
+}
+
+/* Soft light pool under the highlighted card. */
+.arc::after {
+  content: '';
+  position: absolute;
+  inset: auto 20% -1rem;
+  height: 5rem;
+  background: radial-gradient(closest-side, rgb(var(--accent-rgb) / 16%), transparent);
+  pointer-events: none;
+}
+
+.slot {
+  grid-area: 1 / 1;
+  transition: transform 800ms cubic-bezier(0.22, 0.8, 0.2, 1), opacity 600ms var(--ease),
+    filter 600ms var(--ease);
+  will-change: transform, opacity;
+}
+
+.stage[data-dragging='true'] .slot[data-active='true'] {
+  transition: none;
+}
+
+/* Invisible click target that brings a side card to the centre. */
+.hit {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.progress {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+}
+
+.counter {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* 44px touch target with a small visible dot. */
+.dot {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--border-strong);
+  translate: -50% -50%;
+  transition: width var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.dot[aria-current='true']::before {
+  width: 1.5rem;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgb(var(--accent-rgb) / 60%);
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.prev svg {
+  rotate: 90deg;
+}
+
+.next svg {
+  rotate: -90deg;
+}
+
+@media (hover: hover) {
+  .arrow:not(:disabled):hover {
+    border-color: var(--accent);
+  }
+}
+
+.hint {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-align: center;
+}

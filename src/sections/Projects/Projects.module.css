@@ -1,0 +1,10 @@
+.list {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}

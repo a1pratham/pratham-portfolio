@@ -1,0 +1,36 @@
+.circuit {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.track,
+.fill {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.track {
+  stroke: rgb(255 255 255 / 85%);
+  stroke-width: 3.2;
+}
+
+.fill {
+  stroke: var(--accent);
+  stroke-width: 3.6;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  filter: drop-shadow(0 0 4px rgb(var(--accent-rgb) / 70%));
+}
+
+.line {
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tip {
+  fill: #fff;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px var(--accent));
+}

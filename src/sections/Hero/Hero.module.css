@@ -1,0 +1,161 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--nav-h) + var(--space-8)) 0 var(--space-section);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Static stand-in shown until (or instead of) the WebGL scene. */
+.fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at 78% 42%, rgb(var(--accent-2-rgb) / 22%), transparent 34%),
+    radial-gradient(circle at 78% 42%, rgb(var(--accent-rgb) / 14%), transparent 52%);
+  transition: opacity var(--dur-slow) var(--ease);
+}
+
+.fallbackHidden {
+  opacity: 0;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
+
+.dot {
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.title {
+  font-size: var(--step-5);
+  font-weight: 700;
+}
+
+.name {
+  display: block;
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.headline {
+  margin-top: var(--space-6);
+  color: var(--text-muted);
+  font-size: var(--step-2);
+  letter-spacing: -0.02em;
+}
+
+.focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.cue {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  display: none;
+  padding: var(--space-3);
+  translate: -50% 0;
+}
+
+.cueLine {
+  display: block;
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(var(--accent), transparent);
+  transform-origin: top;
+  animation: cue 2.2s var(--ease) infinite;
+}
+
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+  }
+
+  60% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+}
+
+@media (min-height: 640px) and (min-width: 768px) {
+  .cue {
+    display: block;
+  }
+}
+
+@media (max-width: 479px) {
+  .status {
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: clamp(0.62rem, 2.9vw, 0.72rem);
+    line-height: 1.4;
+  }
+
+  .dot {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .actions > :first-child,
+  .actions > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: var(--space-12);
+  }
+
+  .fallback {
+    background: radial-gradient(circle at 50% 22%, rgb(var(--accent-2-rgb) / 22%), transparent 40%),
+      radial-gradient(circle at 50% 22%, rgb(var(--accent-rgb) / 14%), transparent 60%);
+  }
+}
