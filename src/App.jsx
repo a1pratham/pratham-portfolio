@@ -3,6 +3,8 @@ import Footer from './components/layout/Footer/Footer';
 import Navbar from './components/layout/Navbar/Navbar';
 import SkipLink from './components/ui/SkipLink/SkipLink';
 import sections from './sections';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const navLinks = sections.filter((section) => section.inNav);
 
@@ -16,6 +18,9 @@ export default function App() {
         {sections.map(({ id, Component }) => <Component key={id} />)}
       </main>
       <Footer links={navLinks} />
+
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
