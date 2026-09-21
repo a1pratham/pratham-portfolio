@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), seoPlugin(env.VITE_SITE_URL)],
     server: { port: 3000 },
     // The three.js hero chunk is lazy-loaded, so its size is intentional.
-    build: { outDir: 'build', chunkSizeWarningLimit: 600 },
+    build: { outDir: 'dist', chunkSizeWarningLimit: 600 },
     test: {
       globals: true,
       environment: 'jsdom',
