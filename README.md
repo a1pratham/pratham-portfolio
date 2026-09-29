@@ -88,9 +88,6 @@ absolute-URL tags are emitted. The share card is `public/og-image.jpg` (1200x630
 
 ## Credits and licences
 
-- Original template this repository started from: Mayank Agarwal's
-  [dev-portfolio](https://github.com/mayankagarwal09/dev-portfolio), MIT (see `LICENSE.md`). All UI
-  code has since been rewritten; the JSON data format is kept.
 - [React](https://react.dev), [Vite](https://vite.dev), [three.js](https://threejs.org): MIT.
 - Fonts: [Inter](https://rsms.me/inter/) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/),
   SIL Open Font License 1.1 (licence texts in `public/fonts/`).
